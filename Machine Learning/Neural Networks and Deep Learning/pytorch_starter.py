@@ -11,7 +11,8 @@ class Net(nn.Module):
     def __init__(self):  # Constructor
 
         super(Net, self).__init__()
-
+#In the constructor we instantiate two nn.Linear modules and assign them as
+        #member variables.
         # 2 Layers
         self.fc1 = nn.Linear(784, 100)
         self.fc2 = nn.Linear(100, 10)
@@ -19,6 +20,10 @@ class Net(nn.Module):
         # xavier_initialization
 
     def forward(self, x):
+        #In the forward function we accept a Tensor of input data and we must return
+        #a Tensor of output data. We can use Modules defined in the constructor as
+        #well as arbitrary operators on Tensors.
+
         # x - shape = [64, 784]
         # Layer 1
         l1 = self.fc1(x)  # l1 - shape = [64, 100]
